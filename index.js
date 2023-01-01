@@ -7,10 +7,7 @@ const ThingsICanDo = [
     "commands",
     "list",
     "features",
-
-
     "open google",
-
     "open youtube",
     "shutdown",
 ];
@@ -175,16 +172,12 @@ const Answers = {
 
     "date": "Its " + today(monthNames) + " today. Make this day a great one 😀",
     "time": "The time is " + now() + " in your region.",
-
-
     "facebook": getLink("facebook"),
     "google": getLink("google"),
 
     "youtube": getLink("youtube"),
     "chrome": getLink("chrome"),
-
     "weather": getLink("weather"),
-
     "news": getLink("news"),
     "calculations": getLink("calculations"),
 };
@@ -294,8 +287,6 @@ D.addEventListener("DOMContentLoaded", () => {
 
             Answer(Main, User, Text);
 
-         
-
         }
     };
 
@@ -308,93 +299,38 @@ D.addEventListener("DOMContentLoaded", () => {
 
     addAnswer(Main, `Hello my friend`);
 
-
-
 });
 
-function addChatEntry(input, product) {
-    const messagesContainer = document.getElementById("messages");
-    let userDiv = document.createElement("div");
-    userDiv.id = "user";
-    userDiv.className = "user response";
-    userDiv.innerHTML = `<span>${input}</span>`;
-    messagesContainer.appendChild(userDiv);
-
-    let botDiv = document.createElement("div");
-    let botText = document.createElement("span");
-    botDiv.id = "bot";
-    botDiv.className = "bot response";
-    botText.innerText = "Typing...";
-    botDiv.appendChild(botText);
-    messagesContainer.appendChild(botDiv);
-
-    messagesContainer.scrollTop =
-        messagesContainer.scrollHeight - messagesContainer.clientHeight;
-
-    setTimeout(() => {
-        botText.innerText = `${product}`;
-    }, 5000);
-}
+setTimeout(() => {
+    addAnswers.innerText = `${addQuestion}`;
+  }, 6000
+  )
 
 
 
+// function addChatEntry(input, product) {
+//     const messagesContainer = document.getElementById("messages");
+//     let userDiv = document.createElement("div");
+//     userDiv.id = "user";
+//     userDiv.className = "user response";
+//     userDiv.innerHTML = `<span>${input}</span>`;
+//     messagesContainer.appendChild(userDiv);
+
+//     let botDiv = document.createElement("div");
+//     let botText = document.createElement("span");
+//     botDiv.id = "bot";
+//     botDiv.className = "bot response";
+//     botText.innerText = "Typing...";
+//     botDiv.appendChild(botText);
+//     messagesContainer.appendChild(botDiv);
+
+//     messagesContainer.scrollTop =
+//         messagesContainer.scrollHeight - messagesContainer.clientHeight;
+
+//     setTimeout(() => {
+//         botText.innerText = `${product}`;
+//     }, 5000);
+// }
 
 
-// setTimeout(() => {
-//   botText.innerText = `${command}`;
-// }, 2000);
-
-// document.addEventListener("DOMContentLoaded", () => {
-
-//     if (e.code === "Enter") {
-//         let input = document.getElementById("input").value;
-//         document.getElementById("user").innerHTML = input;
-//         output(input);
-//     }
-// });
-let product = document.createElement("span")
-function output(input) {
-    let product;
-  
-    // Regex remove non word/space chars
-    // Trim trailing whitespce
-    // Remove digits - not sure if this is best
-    // But solves problem of entering something like 'hi1'
-  
-    let text = input.toLowerCase().replace(/[^\w\s]/gi, "").replace(/[\d]/gi, "").trim();
-    text = text
-      .replace(/ a /g, " ")   // 'tell me a story' -> 'tell me story'
-      .replace(/i feel /g, "")
-      .replace(/whats/g, "what is")
-      .replace(/please /g, "")
-      .replace(/ please/g, "")
-      .replace(/r u/g, "are you");
-  
-    if (compare(prompts, replies, text)) { 
-      // Search for exact match in `prompts`
-      product = compare(prompts, replies, text);
-    } else if (text.match(/thank/gi)) {
-      product = "You're welcome!"
-    } else if (text.match(/(corona|covid|virus)/gi)) {
-      // If no match, check if message contains `coronavirus`
-      product = coronavirus[Math.floor(Math.random() * coronavirus.length)];
-    } else {
-      // If all else fails: random alternative
-      product = alternative[Math.floor(Math.random() * alternative.length)];
-    }
-  
-    // Update DOM
-    addChat(input, product);
-  }
-  
-  
-  
-  let botText = document.createElement("span");
-  
-  setTimeout(() => {
-      botText.innerText = `${product}`;
-      textToSpeech(product)
-    }, 2000
-    )
-  
-  
+// SKETCH
