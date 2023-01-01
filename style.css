@@ -1,3 +1,11 @@
+.container {
+  max-width: 375px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  max-height: 812px;
+}
+
 .shadow {
   -webkit-box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
@@ -11,13 +19,22 @@ header {
   text-align: center;
 }
 
+h1 {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #4a4a4a;
+}
+
 main {
   padding: 10px;
   margin-bottom: 50px;
 }
 
 footer #command {
-  position: fixed;
   bottom: 0;
   width: 100%;
   padding: 7px 7px;
@@ -33,11 +50,10 @@ footer #command {
 
 #command input {
   display: block;
-  width: 73%;
-  float: left;
 }
 
-#command input, #command button {
+#command input,
+#command button {
   padding: 10px 15px;
   border: 0;
   outline: 0;
@@ -64,19 +80,18 @@ button {
 }
 
 .chat {
-  border: 0;
-  word-wrap: break-word;
-  background-color: #fff;
-  border-radius: 30px;
-  color: #111;
-  padding: 10px 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+  color: #FFFFFF;
+  padding: 21px 33px;
+  background: #7D3DCF;
+  -webkit-box-shadow: 0px 5px 13px rgba(0, 0, 0, 0.21);
+          box-shadow: 0px 5px 13px rgba(0, 0, 0, 0.21);
+  border-radius: 10px;
 }
 
 .question {
