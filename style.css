@@ -41,7 +41,7 @@ footer #command {
   padding-right: 7px;
   margin-bottom: 5px;
   border-radius: 30px;
-  border: 0.5px solid rgba(158, 158, 158, 0.3137254902);
+  border: 0.5px solid #9e9e9e50;
   -ms-box-sizing: border-box;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -80,7 +80,7 @@ button {
 }
 
 .chat {
-  font-family: "Roboto";
+  font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -99,3 +99,4 @@ button {
   background-color: #1e88e5;
   color: #fff;
 }
+/*# sourceMappingURL=style.css.map */
