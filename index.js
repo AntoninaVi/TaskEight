@@ -306,17 +306,21 @@ D.addEventListener("DOMContentLoaded", () => {
         if (event.keyCode === 13) Ask();
     });
 
-    addAnswer(Main, `Hello ${User}, I am Trek. How can I help`);
+    addAnswer(Main, `Hello my friend`);
 
 
 
 });
 
-setTimeout(function() {
-    $('.message.loading').remove();
-    $('<div class="message new"><figure class="avatar"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/156381/profile/profile-80.jpg" /></figure>' + Fake[i] + '</div>').appendTo($('.mCSB_container')).addClass('new');
-    setDate();
-    updateScrollbar();
-    i++;
-  }, 1000 + (Math.random() * 20) * 100);
+// setTimeout(() => {
+//   botText.innerText = `${command}`;
+// }, 2000);
 
+// document.addEventListener("DOMContentLoaded", () => {
+
+//     if (e.code === "Enter") {
+//         let input = document.getElementById("input").value;
+//         document.getElementById("user").innerHTML = input;
+//         output(input);
+//     }
+// });
