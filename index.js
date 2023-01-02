@@ -1,3 +1,18 @@
+let date = new Date(2022,4,25,13,30);
+let date1 = document.getElementById('date')
+
+console.log(date.getFullYear()); // 2022
+console.log(date.getMonth()); // 4
+console.log(date.getDate()); //25
+console.log(date.getHours()); // 13
+console.log(date.getMinutes()); // 30
+console.log(date.getDay()); // 3
+console.log(date.getTime()); // 1653485400000
+console.log(date);
+
+date.innerHTML = `${date1}`;
+console.log(date.toTimeString());
+
 const ThingsICanDo = [
 
     "news",
@@ -301,12 +316,48 @@ D.addEventListener("DOMContentLoaded", () => {
 
 });
 
-setTimeout(() => {
-    addAnswers.innerText = `${addQuestion}`;
-  }, 6000
-  )
+
+// let botDiv = document.createElement("div");
+// let botImg = document.createElement("img");
+// let botText = document.createElement("span");
+// botDiv.id = "bot";
+// botImg.src = "https://res.cloudinary.com/ugwutotheeshoes/image/upload/v1625055846/Movie%20booth/unnamed_yyh2zq.jpg";
+// botImg.className = "avatar";
+// botDiv.className = "bot response";
+// botText.innerText = "Typing...";
+// botDiv.appendChild(botImg);
+// botDiv.appendChild(botText);
 
 
+
+// // Fake delay to seem "real"
+// setTimeout(() => {
+//   botText.innerText = `${span}`;
+// }, 7000
+// )
+
+
+
+
+
+
+
+
+
+
+
+
+// setTimeout(() => {
+//     addQuestion.innerText = `${Answer}`;
+//   }, 6000
+//   )
+
+
+
+// function sayHello(name) {
+//     console.log(`Hello, ${name}`)
+// }
+// setInterval(sayHello, 3000, "https://medium.com/front-end-weekly/developing-a-bouncing-loader-in-css-9edf5154aa9")
 
 // function addChatEntry(input, product) {
 //     const messagesContainer = document.getElementById("messages");
