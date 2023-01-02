@@ -74,3 +74,4 @@ window.addEventListener("load", addHandlers);
 
 // const data = new Date(2017, 3, 22, 5, 23, 50);
 // document.getElementById("date1").innerHTML = data;
+

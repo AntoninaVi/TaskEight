@@ -20,7 +20,7 @@
 
             <div class="content">
                 <h1 class="title">First iPhone Design</h1>
-                <p id="date1" class="date"> </p>
+                <p id="demo"></p>
                 <div id="chat-contents">
 
                 </div>
@@ -38,6 +38,17 @@
     </div>
 
     <script>
+        // const d = new Date();
+        // d.setDate(15);
+        var time = new Date();
+     
+      
+        console.log(
+            // time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
+            time.toLocaleString([], { hour12: true})
+        );
+        document.getElementById("demo").innerHTML = time;
+
 
 
 
