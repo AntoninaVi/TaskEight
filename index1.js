@@ -1,18 +1,18 @@
 
 
 function displayMessage(type) {
-    var initialMessages = [ "Hello friend. What would you like to know?"]
+    var initialMessages = ["Hello friend. What would you like to know?"]
     var responseMessages = ["Can you please just ask me something I know already?"]
 
     var newDiv = document.createElement("div");
     newDiv.className = "chat-bubble";
-    var newImg = document.createElement("img");
-    newImg.className = "bot image";
     var newP = document.createElement("p");
+    var newImg = document.createElement("img");
+    newImg.className = "bot-image";
     newP.innerHTML = type == "initial" ? initialMessages[Math.floor(Math.random() * Math.floor(initialMessages.length))] : responseMessages[Math.floor(Math.random() * Math.floor(responseMessages.length))];
     newDiv.appendChild(newImg)
     newDiv.appendChild(newP);
-  
+
 
     var messages = document.getElementById("chat-contents");
     messages.appendChild(newDiv);
@@ -23,13 +23,13 @@ function arrowSubmit() {
     console.log("test")
     button = document.getElementById("submit-chat");
     text = document.getElementById("chat-message-value");
- 
- 
+
+
     if (text.value != "") {
         button.classList = "active";
     } else {
         button.classList.remove("active");
-        
+
     }
 }
 
@@ -41,9 +41,9 @@ function submitMessage() {
     document.getElementById("chat-message-value").value = "";
 
     var newDiv = document.createElement("div");
-    newDiv.className = "chat-bubble";
+    newDiv.className = "chat-bubble--user";
     var newImg = document.createElement("img");
-    newImg.className = "user image";
+    newImg.className = "user-image";
     var newP = document.createElement("p");
     newP.innerHTML = text;
     newDiv.appendChild(newImg);
@@ -71,3 +71,6 @@ function addHandlers() {
 }
 
 window.addEventListener("load", addHandlers);
+
+// const data = new Date(2017, 3, 22, 5, 23, 50);
+// document.getElementById("date1").innerHTML = data;
