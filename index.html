@@ -50,20 +50,28 @@
     </div> -->
     <div class="container">
         <div class="chat-header">
-          <h1 class="title">Antistress Chat</h1>
+            <h1 class="title">Antistress Chat</h1>
+           
         </div>
+
         <div class="chat-body">
-            <div id="loaderTyping">
-                <img class="loader-img" src="img/pic2.svg" alt="">
+            <p id="dateTime"></p>
+            <!-- <div class="chatbot-message"></div>
+            <div class="user-message"></div> -->
+
+        </div>
+        <div id="loaderTyping">
+            <img class="loader-img" src="img/pic2.svg" alt="">
             <div id="loader" class="loader">
                 <div></div>
                 <div></div>
                 <div></div>
-              </div>
             </div>
         </div>
-        
         <div class="chat-input">
+           
+
+
             <div class="input-sec">
                 <input type="text" id="txtInput" placeholder="Type a message..." autofocus />
             </div>
@@ -71,7 +79,7 @@
 
             </div>
         </div>
-        
+
     </div>
 
 
@@ -81,18 +89,31 @@
 
 
     <script>
+        let str = '2020-11-19T05:00:00.000Z'
+        let d = new Date(str);
+
+        var day = d.getUTCDate();
+        var month = d.getUTCMonth();
+        var year = d.getUTCFullYear();
+        var hour = d.getUTCHours();
+        var minute = d.getUTCMinutes();
+        var second = d.getUTCSeconds();
+
+        console.log(`${day}.${month}.${year} ${hour}:${minute}:${second}`);
+
+
         const chatBody = document.querySelector(".chat-body");
         const txtInput = document.querySelector("#txtInput");
         const send = document.querySelector(".send");
-        
-      
+
+
         send.addEventListener("click", () => renderUserMessage());
         document.getElementById("loaderTyping").style.visibility = "hidden";
 
         txtInput.addEventListener("keyup", (event) => {
             if (event.keyCode === 13) {
                 renderUserMessage();
-                
+
             }
         });
 
@@ -102,11 +123,11 @@
             txtInput.value = "";
             document.getElementById("loaderTyping").style.visibility = "visible";
             setTimeout(() => {
-                
+
                 renderChatbotResponse(userInput);
                 setScrollPosition();
                 document.getElementById("loaderTyping").style.visibility = "hidden";
-            }, 100000);
+            }, 1000);
         };
 
         const renderChatbotResponse = (userInput) => {
@@ -118,7 +139,8 @@
             let className = "user-message";
             if (type !== "user") {
                 className = "chatbot-message";
-                
+
+
             }
             const messageEle = document.createElement("div");
             const txtNode = document.createTextNode(txt);
@@ -147,19 +169,23 @@
             today: new Date().toDateString(),
             time: new Date().toLocaleTimeString(),
             cats: "dogs",
-            
+
         };
-        
+
+        var data = new Date();
+        document.getElementById("dateTime").innerHTML =  data.toDateString(),
+        document.getElementById("dateTime").innerHTML = data.toLocaleTimeString();
+
         // const d = new Date();
         // d.setDate(15);
         // var time = new Date();
 
 
         // console.log(
-        //     // time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
-        //     time.toLocaleString([], { hour12: true })
+        //     time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
+        //     time.toLocaleString([], { hour12: true });
         // );
-        // document.getElementById("date").innerHTML = time;
+
 
     </script>
 

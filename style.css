@@ -4,17 +4,19 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
+
 body {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   background: #bfcfd8;
 }
-body::-webkit-scrollbar-track{
+body::-webkit-scrollbar-track {
   color: transparent;
 }
 .container {
-  --light-color: #fff;
-  height: 47.5em;
+  color: #fff;
+  height: 53em;
   width: 29.6em;
   margin-left: auto;
   margin-right: auto;
@@ -22,6 +24,9 @@ body::-webkit-scrollbar-track{
   border-radius: 12px;
   padding: 2em;
 
+}
+.container::-webkit-scrollbar-track{
+  visibility: hidden;
 }
 .chat-header {
   font-style: normal;
@@ -37,11 +42,13 @@ body::-webkit-scrollbar-track{
 .title {
 }
 .chat-body {
+  position: relative;
   height: 500px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  overflow-y: auto;
+  overflow:auto;
+  overflow-x: hidden;
 }
 .chat-input {
 }
@@ -104,6 +111,9 @@ body::-webkit-scrollbar-track{
   right: 6em;
 }
 .loader {
+  /* position: relative;
+  right: 16em;
+  top: 22em; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -133,12 +143,24 @@ body::-webkit-scrollbar-track{
     transform: translate(0, -20px);
   }
 }
-#loaderTyping{
-  position: relative;
-  top: 20em;
+#loaderTyping {
+ 
+  margin-top: 3em;
   display: flex;
   align-items: baseline;
 }
-.loader-img{
-margin-right: 2em;
+.loader-img {
+  margin-right: 2em;
+}
+#dateTime{
+  position: relative;
+  right: 35%;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #4A4A4A;
+ 
 }
