@@ -52,14 +52,18 @@
         <div class="chat-header">
           <h1 class="title">Antistress Chat</h1>
         </div>
-        <div class="chat-body"></div>
-        <div class="chat-input">
-            <div id="loaderTyping"></div>
+        <div class="chat-body">
+            <div id="loaderTyping">
+                <img class="loader-img" src="img/pic2.svg" alt="">
             <div id="loader" class="loader">
                 <div></div>
                 <div></div>
                 <div></div>
               </div>
+            </div>
+        </div>
+        
+        <div class="chat-input">
             <div class="input-sec">
                 <input type="text" id="txtInput" placeholder="Type a message..." autofocus />
             </div>
@@ -67,6 +71,7 @@
 
             </div>
         </div>
+        
     </div>
 
 
@@ -82,7 +87,7 @@
         
       
         send.addEventListener("click", () => renderUserMessage());
-        document.getElementById("loader").style.visibility = "hidden";
+        document.getElementById("loaderTyping").style.visibility = "hidden";
 
         txtInput.addEventListener("keyup", (event) => {
             if (event.keyCode === 13) {
@@ -95,13 +100,13 @@
             const userInput = txtInput.value;
             renderMessageEle(userInput, "user");
             txtInput.value = "";
-            document.getElementById("loader").style.visibility = "visible";
+            document.getElementById("loaderTyping").style.visibility = "visible";
             setTimeout(() => {
                 
                 renderChatbotResponse(userInput);
                 setScrollPosition();
-                document.getElementById("loader").style.visibility = "hidden";
-            }, 4000);
+                document.getElementById("loaderTyping").style.visibility = "hidden";
+            }, 100000);
         };
 
         const renderChatbotResponse = (userInput) => {
