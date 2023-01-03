@@ -11,47 +11,150 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <script src="index1.js"></script>
+    <script src="index.js"></script>
 </head>
 
 <body>
-    <div class="wrapper">
-        <div class="container">
+    <!-- <div class="wrapper"> -->
+    <!-- <div class="container">
 
             <div class="content">
-                <h1 class="title">First iPhone Design</h1>
-                <p id="demo"></p>
+                <h1 class="title">Antistress chatbot</h1>
+                <p id="date"></p>
                 <div id="chat-contents">
-
+                    <h1 id="chatLog">- - FRIDAY - - CHATBOT-  -<br></h1>
                 </div>
 
                 <div id="activity">
-                    <div id="isTyping">Тоня, жди...</div>
+                    <div id="loaderTyping">
+                        <div class="bot-image"></div>
+                        <div class="chat-bubble">
+                            <div class="loader">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
 
-                <div class="chat-box"><input type="text" id="chat-message-value" autocomplete="off"
+                <div class="chat-box">
+                    <input type="text" id="chat-message-value" autocomplete="off"
                         placeholder="Type a message...">
-                    <button id="submit-chat">ENTER</button>
+                    <button id="submit-chat"></button>
+                    <input id="submit-chat" type="button" value="Send" />
                 </div>
+            </div>
+        </div>
+    </div> -->
+    <div class="container">
+        <div class="chat-header">
+          <h1 class="title">Antistress Chat</h1>
+        </div>
+        <div class="chat-body"></div>
+        <div class="chat-input">
+            <div id="loaderTyping"></div>
+            <div id="loader" class="loader">
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            <div class="input-sec">
+                <input type="text" id="txtInput" placeholder="Type a message..." autofocus />
+            </div>
+            <div class="send">
+
             </div>
         </div>
     </div>
 
+
+
+
+
+
+
     <script>
+        const chatBody = document.querySelector(".chat-body");
+        const txtInput = document.querySelector("#txtInput");
+        const send = document.querySelector(".send");
+        
+      
+        send.addEventListener("click", () => renderUserMessage());
+        document.getElementById("loader").style.visibility = "hidden";
+
+        txtInput.addEventListener("keyup", (event) => {
+            if (event.keyCode === 13) {
+                renderUserMessage();
+                
+            }
+        });
+
+        const renderUserMessage = () => {
+            const userInput = txtInput.value;
+            renderMessageEle(userInput, "user");
+            txtInput.value = "";
+            document.getElementById("loader").style.visibility = "visible";
+            setTimeout(() => {
+                
+                renderChatbotResponse(userInput);
+                setScrollPosition();
+                document.getElementById("loader").style.visibility = "hidden";
+            }, 4000);
+        };
+
+        const renderChatbotResponse = (userInput) => {
+            const res = getChatbotResponse(userInput);
+            renderMessageEle(res);
+        };
+
+        const renderMessageEle = (txt, type) => {
+            let className = "user-message";
+            if (type !== "user") {
+                className = "chatbot-message";
+                
+            }
+            const messageEle = document.createElement("div");
+            const txtNode = document.createTextNode(txt);
+            messageEle.classList.add(className);
+            messageEle.append(txtNode);
+            chatBody.append(messageEle);
+        };
+
+        const getChatbotResponse = (userInput) => {
+            return responseObj[userInput] == undefined
+                ? "Please try something else"
+                : responseObj[userInput];
+        };
+
+        const setScrollPosition = () => {
+            if (chatBody.scrollHeight > 0) {
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }
+        };
+
+
+
+        const responseObj = {
+            hello: "Hey ! How are you doing ?",
+            hey: "Hey! What's Up",
+            today: new Date().toDateString(),
+            time: new Date().toLocaleTimeString(),
+            cats: "dogs",
+            
+        };
+        
         // const d = new Date();
         // d.setDate(15);
-        var time = new Date();
-     
-      
-        console.log(
-            // time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
-            time.toLocaleString([], { hour12: true})
-        );
-          document.getElementById("demo").innerHTML = time;
+        // var time = new Date();
 
 
-
-
+        // console.log(
+        //     // time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
+        //     time.toLocaleString([], { hour12: true })
+        // );
+        // document.getElementById("date").innerHTML = time;
 
     </script>
 
