@@ -7,14 +7,17 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   background: #bfcfd8;
+  height: 100%;
 }
 body::-webkit-scrollbar-track {
   color: transparent;
 }
 .container {
   color: #fff;
-  height: 56em;
-  width: 29.6em;
+  max-height: 56em;
+  height: 100%;
+  max-width: 29.6em;
+  width: 90%;
   margin-top: 1em;
   margin-left: auto;
   margin-right: auto;
@@ -22,9 +25,15 @@ body::-webkit-scrollbar-track {
   border-radius: 12px;
   padding: 2em;
 }
-.container::-webkit-scrollbar-track {
-  visibility: hidden;
+@media screen and (max-width: 1280px) {
+  .container {
+    margin-top: 0;
+    height: 100vh;
+  }
 }
+/* .container::-webkit-scrollbar-track {
+  visibility: hidden;
+} */
 .chat-header {
   font-style: normal;
   font-weight: 500;
@@ -34,7 +43,7 @@ body::-webkit-scrollbar-track {
   letter-spacing: 0.02em;
   color: #4a4a4a;
 }
-.list{
+.list {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -44,7 +53,7 @@ body::-webkit-scrollbar-track {
   font-size: 13px;
   margin-bottom: 0.5em;
 }
-.list-item{
+.list-item {
   margin-left: 0.5em;
   color: #97182f;
   font-size: 12px;
@@ -62,13 +71,27 @@ body::-webkit-scrollbar-track {
   color: #4a4a4a;
 }
 .chat-body {
-  height: 35em;
+  height: 60%;
+  max-height:75vh;
+  min-width: 50%;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   overflow: auto;
   overflow-x: hidden;
 }
+/* @media screen and (min-width: 1280px) {
+  .chat-body {
+    max-height: 60vh;
+  }
+} */
+/* @media screen and (max-width: 1024px) {
+  .chat-body {
+    transform: scale(0.9);
+    max-height: 50vh;
+  }
+} */
 
 #txtInput {
   font-style: normal;
@@ -87,9 +110,17 @@ body::-webkit-scrollbar-track {
   box-shadow: 0px 5px 13px rgba(0, 0, 0, 0.21);
   border-radius: 20px;
 }
-input::placeholder{
+input::placeholder {
   color: #ffffff;
 }
+/* .chat-input {
+  position: relative;
+  top: -20em;
+  flex: 1;
+} */
+/* @media screen and (max-width: 1280px) {
+  
+} */
 .user-message {
   display: flex;
   align-items: center;
