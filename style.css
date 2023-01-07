@@ -8,14 +8,15 @@ body {
   font-size: 16px;
   background: #bfcfd8;
   height: 100%;
+  overflow-y: hidden;
 }
-body::-webkit-scrollbar-track {
+/* body::-webkit-scrollbar-track {
   color: transparent;
-}
+} */
 .container {
   color: #fff;
-  max-height: 56em;
-  height: 100%;
+  height: 56em;
+  max-height: 100%;
   max-width: 29.6em;
   width: 90%;
   margin-top: 1em;
@@ -28,12 +29,18 @@ body::-webkit-scrollbar-track {
 @media screen and (max-width: 1280px) {
   .container {
     margin-top: 0;
+    margin-bottom: 0;
     height: 100vh;
   }
 }
-/* .container::-webkit-scrollbar-track {
-  visibility: hidden;
-} */
+
+@media screen and (max-width: 350px) {
+  .container {
+    transform: scale(1);
+    padding: 0.5em;
+  }
+}
+
 .chat-header {
   font-style: normal;
   font-weight: 500;
@@ -53,6 +60,15 @@ body::-webkit-scrollbar-track {
   font-size: 13px;
   margin-bottom: 0.5em;
 }
+@media screen and (max-width: 350px) {
+  .list {
+    transform: scale(0.8);
+    margin-top: -2em;
+  }
+}
+@media screen and (max-width: 350px) {
+}
+
 .list-item {
   margin-left: 0.5em;
   color: #97182f;
@@ -72,7 +88,7 @@ body::-webkit-scrollbar-track {
 }
 .chat-body {
   height: 60%;
-  max-height:75vh;
+  max-height: 75vh;
   min-width: 50%;
   max-width: 100%;
   display: flex;
@@ -86,14 +102,35 @@ body::-webkit-scrollbar-track {
     max-height: 60vh;
   }
 } */
-/* @media screen and (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   .chat-body {
     transform: scale(0.9);
-    max-height: 50vh;
+    max-height: 52vh;
   }
+}
+@media screen and (max-width: 350px) {
+  .chat-body {
+    transform: scale(0.8);
+  }
+}
+/* .chat-input {
+  position: fixed;
+  max-width: 20em;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
 } */
 
+@media screen and (max-width: 350px) {
+  .chat-input {
+    position: relative;
+    bottom: 1em;
+    transform: scale(0.8);
+  }
+}
 #txtInput {
+  display: flex;
+  align-items: center;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -103,8 +140,6 @@ body::-webkit-scrollbar-track {
   border: none;
   outline: none;
   width: 100%;
-  display: flex;
-  align-items: center;
   padding: 18px 0 18px 45px;
   background: #7d3dcf;
   box-shadow: 0px 5px 13px rgba(0, 0, 0, 0.21);
@@ -113,14 +148,7 @@ body::-webkit-scrollbar-track {
 input::placeholder {
   color: #ffffff;
 }
-/* .chat-input {
-  position: relative;
-  top: -20em;
-  flex: 1;
-} */
-/* @media screen and (max-width: 1280px) {
-  
-} */
+
 .user-message {
   display: flex;
   align-items: center;
