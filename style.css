@@ -30,7 +30,7 @@ body {
   .container {
     margin-top: 0;
     margin-bottom: 0;
-    height: 100vh;
+    max-height: 100vh;
   }
 }
 
